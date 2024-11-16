@@ -37,3 +37,68 @@ Maven工程类型
         发布在服务器上的工程
 
 
+
+Idea 里面创建maven工程
+        pom.xml (标志是maven工程)
+
+        main (项目主体文件)
+            java 存放 .java文件
+                包通过group id生成
+
+        resource (除.java文件可以放 如配置文件 静态资源 模板页面 )
+
+pom.xml
+        <!--    坐标信息 本工程坐标信息   每个maven项目都有唯一的坐标信息-->
+
+            <groupId>org.example</groupId>
+            <artifactId>firstmaven</artifactId>
+            <version>1.0-SNAPSHOT</version>
+
+        <!--怎么去写一个工程坐标信息
+            项目：
+            group id :域名反过来 com.baidu
+            artifactid: 项目名 oa
+            version
+            模块： (如 oa 项目的 【前台、后台、common】)
+            groupid : 增加项目名  com.baidu.oa
+            artifactid: 模块名
+            -->
+
+        在文件中添加<dependencies> 标签中增加 依赖（从中央仓库网站查找）
+
+        学会在自己仓库中找自己下载的依赖jar包
+
+        其他maven项目若要依赖这个项目也会自动依赖这个项目所依赖的的依赖
+
+         在properties标签中增加版本标签如 <javax.servlet.version> 4.0.1</javax.servlet.version>
+         在上面依赖中将版本标签改成获取            <version>${javax.servlet.version}</version>
+         这样可以统一管理版本而不用一个一个手改
+
+         默认打包成jar 若想生成web应用    <packaging> war </packaging>
+
+         <scope> 范围标签了解即可
+
+
+依赖传递
+
+        默认会依赖之前的依赖
+        <optional> 可选择下一个项目会不会传递自己的依赖
+        自己重写想要的依赖替代之前的依赖
+        或者<exclusion>排除掉自己不想用的依赖
+
+        搜索showdigram 用图表示依赖
+
+
+聚合工程
+
+        1.把src删除 ，聚合项目只是管理子项目
+        2.把packaging 修改为pom,当前不是一个具体的包
+        3.<modules> 里面添加上管理的子模块名
+
+        父类工程统一管理子类需要的依赖：可选的依赖放入<depedencyMangement>
+
+!!!所有的依赖通过<properties> 管理所有版本号
+
+
+
+
