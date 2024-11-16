@@ -1,0 +1,39 @@
+1 bin
+        可执行文件
+
+
+2 conf
+        maven的核心配置文件 /全局配置文件  setting-xml
+
+
+3.boot
+        启动时候的jar包
+
+4.lib
+
+        工作时候的jar包
+
+
+远程仓库
+
+        默认仓库就是apache提供的远程仓库  mvnrepository.com
+        本地私服仓库
+
+本地仓库
+
+
+仓库配置
+        setting.xml配置 本地仓库
+                   配置 镜像仓库  在mirror 标签体内修改为阿里云的镜像服务
+                   配置 jdk      在profile 标签内
+
+
+Maven工程类型
+        1.POM 工程（管理作用）
+        逻辑工程 用在父级工程 或聚合工程 中
+        2.JAR 工程
+        打包成jar  。即常见的本地工程 --> java project
+        3.WAR 工程
+        发布在服务器上的工程
+
+
