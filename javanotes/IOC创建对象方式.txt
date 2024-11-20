@@ -1,0 +1,128 @@
+4.默认使用无参构造方法创建对象
+
+    若用有参构造方法  1.下标赋值
+                   2.类型赋值（不建议使用）
+                   3.参数名赋值
+
+总结：在配置文件加载的时候，容器中管理的对象就已经初始化了。
+
+
+5.Spring 配置
+
+        5.1alias
+
+                    <alias name="user"  alias="~~" />
+
+        5.2bean配置
+                    class:bean对象所对应的全限定名：包名+类名
+                    name:也是别名，而且可以取多个别名
+
+        5.3import
+
+                    利用import 将多个xml配置文件合并成一个
+
+
+6.依赖注入
+
+        ·构造器注入
+
+        ·set方式注入
+            依赖：bean对象的创建依赖于容器
+            注入：bean对象的所有属性由容器来注入
+
+         完善注入信息
+    <!--  使用spring 来创建对象，在spring中都称为bean-->
+    <bean id="student" class="com.kuang.Student">
+        <property name="name"  value="这是姓名"/>
+        <property  name ="address" ref="adress"/>
+        <property name="books">
+        <array>
+            <value >水浒传</value>
+            <value >红楼梦</value>
+        </array>
+
+        </property>
+        <property name="hobby">
+            <list>
+                <value> 听歌</value>
+                <value> 敲代码</value>
+            </list>
+
+        </property>
+        <property name="card">
+            <map>
+                <entry key ="学生卡 " value=" sdsjdi"/>
+                <entry key ="身份证" value ="111"></entry>
+            </map>
+        </property>
+
+<!--        null值注入-->
+
+        <property name="wife">
+            <null/>
+        </property>
+
+
+<!--        properties注入方式-->
+        <property name="info">
+            <props>
+                <prop key="学号">20323</prop>
+                <prop key="姓名">沈</prop>
+            </props>
+        </property>
+
+
+tips：重写toString方法会隐式调用每个对象的同String方法  ，数组要显示写出来（自身没有直接重写）
+    public String toString() {
+        return "Student{" +
+                "name='" + name + '\'' +
+                ", address=" +address +
+                ", hobby=" + hobby +
+                ", card=" + card +
+                ", info=" + info +
+                ", games=" + games +
+                ", books=" + Arrays.toString(books) +
+                ", wife='" + wife + '\'' +
+                '}';
+    }
+
+导入c ,p约束
+
+    p命名空间，可以直接注入属性   （property 的缩写）
+
+    c命名空间，直接通过有参构造注入属性（constructor)
+
+
+6.4  bean.作用域
+        单例模式  （默认）
+            表面上实列了多个对象，但实际都是一个对象
+
+         原型模式 （）
+
+         其余的request,session, application,
+
+
+
+
+
+7.Bean的自动装配
+
+    1.xml显示的配置
+    2.java显示配置
+    3.隐式的自动装配（重要）
+
+    7.1 byname 查找 需要保证所有的beanid唯一，并且这个bean和自动注入的属性set方法的值一致。
+
+    7.2 bytype 查找 需要保证所有的bean的class唯一，并且这个bean和自动注入的属性类型一致。
+
+    7.3 使用注解
+        1.首先导入约束2.配置注解的支持【重要】
+
+         <context:component-scan base-package="com.kuang.pojo" />
+
+
+        @Autowired 直接在属性上使用即可 或者 在set方法上面使用  或者甚至都不用写set方法了·
+
+        如果自动装配环境比较复杂，@Autowired 可以和@Qualifer(value="~~") 配合使用指向具体的bean （比如在xml中有多个同类型bean id不相匹配）
+
+        @Resource  默认通过byname方式实现，如果不找不到名字，则通过bytype 实现
