@@ -12,9 +12,9 @@
                 *返回值：void
                 *参数列表（空参）
             3.给方法加上@Test  (使其让方法可以独立运行而不依赖于main)
-
+    
             4.添加JUNit 依赖 (导包导类)
-
+    
         *判定结果
             *用assert 断言操作来判定结果正确 （而不用sout输出肉眼判断）
 
@@ -33,11 +33,12 @@
     public void close (){
         //该方法测试方法后执行       释放资源
     }
-            
-        
+
+
+​        
 # 反射 ：框架设计的灵魂
     *框架： 半成品软件 。简化开发。
-
+    
     *反射：将类的各个组成部分封装为其他对象，这就是反射机制
         *好处:可以在程序运行中，操作对象。
 
@@ -54,16 +55,17 @@
     *Class 对象功能 
             *获取功能
                 1.获取成员变量们
-
+    
                     * Filed[] getFileds()       (获取public 的方法)
                     * Filed[] getFileds(string name)
-
+    
                      *Filed[] getDeclaredFileds()       (获取所有的方法 甚至包括private(使用前忽略安全检查) )
                     *Filed[] getDeclaredFileds(string name)
-
+    
                 3.获取方法们
 
-                   
+
+​                   
                 2.获取构造方法们
                     *Constructor<?>getConstructors()
                     *Constructor<T>getConstructor(String name)                                                    
@@ -77,12 +79,12 @@
 
 
     *Filed :成员变量 
-
+    
             *获取值      Filed a=personClass.getFiled("a")        a是Filed 对象不是真正的值     value=a.get(new Person)
             *修改值
-
+    
     *Constructor  :构造方法
-
+    
         *创建对象：
             *T newinstance (Object ~ )
             * 如果使用空参数构造方法创建对象，操作简化为：Class 对象的 new instance方法 
@@ -93,7 +95,7 @@
             
             Object invocke(Object ~ )
         *获取方法的名称    
-
+    
             getname
 
  * 案例
@@ -106,29 +108,44 @@
           * 2.在程序中加载配置文件
           * 3.使用反射技术加载类文件进内存
           * 4.创建对象 执行方法 
-    
-
-    
+   
+   
+   
 
     ``` 
         Properties pro= new Properties();
 
 
         ClassLoader classLoader = Reflectoranli.class.getClassLoader();     //获取类加载器
-
+    
         InputStream resourceAsStream = classLoader.getResourceAsStream("pro.properties");
-
+    
         pro.load(resourceAsStream);
-
+    
         String classname = pro.getProperty("className");
         String method = pro.getProperty("methodName");
-
+    
         Class aClass = Class.forName(classname);
-
+    
         Object o = aClass.newInstance();
         Method m = aClass.getMethod(method);
         m.invoke(o);
 
 
 
-        
+​        ![image-20241228155608845](C:\Users\ZhuanZ\AppData\Roaming\Typora\typora-user-images\image-20241228155608845.png)
+
+![image-20241228161214384](C:\Users\ZhuanZ\AppData\Roaming\Typora\typora-user-images\image-20241228161214384.png)
+
+
+
+
+
+* 如何创建注解
+
+![image-20241228163253782](C:\Users\ZhuanZ\AppData\Roaming\Typora\typora-user-images\image-20241228163253782.png)
+
+![image-20241228163820845](C:\Users\ZhuanZ\AppData\Roaming\Typora\typora-user-images\image-20241228163820845.png)
+
+* 注： name() age() id() 均为属性，相当于普通类中的name age id  若注解类中只有一个属性值 可以用value  命名 然后 注解时候 可以省略 value=
+
