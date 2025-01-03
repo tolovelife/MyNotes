@@ -363,3 +363,26 @@ swagger  和 knife4 j (在swagger 增强版 )
 在 表示层上日期属性上面标注  @JsonFormat (pattern ="yyyy-MM-dd	HH:mm:ss",timezone= "GMT+8")
 
 ![image-20250102111147484](C:\Users\ZhuanZ\AppData\Roaming\Typora\typora-user-images\image-20250102111147484.png)
+
+
+
+## SpringMVC 源码 九大组件 
+
+![image-20250102180203382](C:\Users\ZhuanZ\AppData\Roaming\Typora\typora-user-images\image-20250102180203382.png)
+
+
+
+* 所有请求过来 都是通过  DispatcherServlet 来启动这九大组件  
+
+
+
+* DispatcherServlet --> HandlerMapping---> HandlerAdaper ----> Handler处理器 (执行具体业务 ,返回结果 给 HandlerAdapter )   ----> @ResponBody  HttpMessageConvert(转换对向为json )---->浏览器 
+
+* 
+
+* ![image-20250102181940979](C:\Users\ZhuanZ\AppData\Roaming\Typora\typora-user-images\image-20250102181940979.png)
+
+
+
+
+
