@@ -114,3 +114,50 @@ springboot 默认用 SLF4j（日志门面   ）  + Logback (日志实现 )			---
 ##### 环境隔离 
 
 ![image-20250103172328396](C:\Users\ZhuanZ\AppData\Roaming\Typora\typora-user-images\image-20250103172328396.png)
+
+
+
+* 外部化配置   （方便修改 而不用改包 新打包 ）
+* ![image-20250104154342330](C:\Users\ZhuanZ\AppData\Roaming\Typora\typora-user-images\image-20250104154342330.png)
+
+越外围越远     优先级最高 即 java  -jar ~~.jar  --  ~~   命令行配置优先级最高。
+
+激活优先    》	外部优先   》 内部 
+
+
+
+
+
+## # 单元测试
+
+![image-20250104155806983](C:\Users\ZhuanZ\AppData\Roaming\Typora\typora-user-images\image-20250104155806983.png)
+
+* 断言注解 
+* ![image-20250104160734377](C:\Users\ZhuanZ\AppData\Roaming\Typora\typora-user-images\image-20250104160734377.png)
+
+用maven test 即可测试所有方法  根据断言判断是否真的符合了 业务得 最后结果的正确测试 
+
+
+
+* actuator  可观测性 
+* 导入场景即可 
+
+![image-20250104162753882](C:\Users\ZhuanZ\AppData\Roaming\Typora\typora-user-images\image-20250104162753882.png)
+
+有模块十分方便 查看相关 信息 url即可 
+
+![image-20250104163520689](C:\Users\ZhuanZ\AppData\Roaming\Typora\typora-user-images\image-20250104163520689.png)
+
+![image-20250104163617219](C:\Users\ZhuanZ\AppData\Roaming\Typora\typora-user-images\image-20250104163617219.png)
+
+* springboot 生命周期监听    各个阶段
+
+
+
+![image-20250104165034060](C:\Users\ZhuanZ\AppData\Roaming\Typora\typora-user-images\image-20250104165034060.png)
+
+
+
+* meta-inf 中 spring.factories   和  放容器 两种 方法   
+
+![image-20250104165137569](C:\Users\ZhuanZ\AppData\Roaming\Typora\typora-user-images\image-20250104165137569.png)
