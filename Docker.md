@@ -40,3 +40,12 @@
 * ![image-20250106090905988](C:\Users\ZhuanZ\AppData\Roaming\Typora\typora-user-images\image-20250106090905988.png)
 
 自动在docker0 网络  可自己创建网络 （这样域名就是容器名 方便访问 ）
+
+
+
+# Comopose(批量管理容器)
+
+![image-20250107215654472](C:\Users\ZhuanZ\AppData\Roaming\Typora\typora-user-images\image-20250107215654472.png)
+
+
+
