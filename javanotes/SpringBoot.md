@@ -150,6 +150,12 @@ springboot 默认用 SLF4j（日志门面   ）  + Logback (日志实现 )			---
 
 ![image-20250104163617219](C:\Users\ZhuanZ\AppData\Roaming\Typora\typora-user-images\image-20250104163617219.png)
 
+
+
+
+
+
+
 * springboot 生命周期监听    各个阶段
 
 
@@ -158,6 +164,63 @@ springboot 默认用 SLF4j（日志门面   ）  + Logback (日志实现 )			---
 
 
 
+![image-20250110111841122](C:\Users\ZhuanZ\AppData\Roaming\Typora\typora-user-images\image-20250110111841122.png)
+
+
+
+* 事件驱动开发 
+
+原本代码是 同步阻塞式   硬编码形式     加减业务 要增删调用
+
+![image-20250110112449062](C:\Users\ZhuanZ\AppData\Roaming\Typora\typora-user-images\image-20250110112449062.png)
+
+* 事件开发 把传统 直接调取各个 服务  转而 发布一个事件    需要的服务在自己内部 注册事件即可 （还可以开启@Async @EnableAsync 异步 效率更高）
+* 写事件类 
+* ![image-20250110113611077](C:\Users\ZhuanZ\AppData\Roaming\Typora\typora-user-images\image-20250110113611077.png)
+* ![image-20250110113503176](C:\Users\ZhuanZ\AppData\Roaming\Typora\typora-user-images\image-20250110113503176.png)
+
+* 
+* 
+* 
 * meta-inf 中 spring.factories   和  放容器 两种 方法   
 
 ![image-20250104165137569](C:\Users\ZhuanZ\AppData\Roaming\Typora\typora-user-images\image-20250104165137569.png)
+
+
+
+* 自动配置原理 （）
+* ![image-20250110114440897](C:\Users\ZhuanZ\AppData\Roaming\Typora\typora-user-images\image-20250110114440897.png)
+
+
+
+![image-20250110114813235](C:\Users\ZhuanZ\AppData\Roaming\Typora\typora-user-images\image-20250110114813235.png)
+
+
+
+
+
+* 自定义starter
+
+自己写好的项目  让别的项目也能够使用
+
+（1.去掉main方法 留下有用组件   2依赖于基础starter    ）
+
+![image-20250110134621004](C:\Users\ZhuanZ\AppData\Roaming\Typora\typora-user-images\image-20250110134621004.png)
+
+
+
+* ![image-20250110135502470](C:\Users\ZhuanZ\AppData\Roaming\Typora\typora-user-images\image-20250110135502470.png)
+
+* spring只扫描主程序所在的包
+* 解决方法：写个配置类放到容器中
+* 了解springboot 底层配置原理就知道 怎么弄 
+
+![image-20250110150415004](C:\Users\ZhuanZ\AppData\Roaming\Typora\typora-user-images\image-20250110150415004.png)
+
+
+
+
+
+* 最后要掌握spring的源码
+
+![image-20250110150213018](C:\Users\ZhuanZ\AppData\Roaming\Typora\typora-user-images\image-20250110150213018.png)
