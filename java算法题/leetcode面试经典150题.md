@@ -1,0 +1,10 @@
+<img src="C:\Users\ZhuanZ\AppData\Roaming\Typora\typora-user-images\image-20250109183543212.png"  style="zoom: 50%;" />
+
+> 双指针   遍历指针  添加指针      遍历指针只管碰到不相同的数 	添加指针添加后加一
+>
+> （原本想处理相同的数  思路错误）
+
+
+
+
+

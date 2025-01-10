@@ -157,3 +157,14 @@ mv （移动或者）
 1. rpm 
 2. docker
 3. 解压缩 
+
+
+
+tar -zxcv   ~~~
+
+
+
+
+
+* 防火墙
+* ![image-20250109101044353](C:\Users\ZhuanZ\AppData\Roaming\Typora\typora-user-images\image-20250109101044353.png)
