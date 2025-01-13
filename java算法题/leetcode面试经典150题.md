@@ -8,3 +8,12 @@
 
 
 
+
+
+* 189 轮转数组
+
+![image-20250110210341520](C:\Users\ZhuanZ\AppData\Roaming\Typora\typora-user-images\image-20250110210341520.png)
+
+* 清晰数组位置   熟练掌握 Arrays.copyOfRange	System.arraycopy() 
+  * 官方解  正常遍历数组         newArr **[(i+k)%n]**=nums[i]	
+  * 
