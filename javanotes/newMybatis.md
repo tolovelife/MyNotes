@@ -1,34 +1,4 @@
-* 驼峰命名规则映射( 比 别名方便)
 
-* 在application.properties 中
-
-* ```
-  mybatis.configuration.map-underscore-to-camel-case=true
-  ```
-
-![image-20241229131310434](C:\Users\ZhuanZ\AppData\Roaming\Typora\typora-user-images\image-20241229131310434.png)
-
-![image-20241229131127699](C:\Users\ZhuanZ\AppData\Roaming\Typora\typora-user-images\image-20241229131127699.png)
-
-
-
-${} 和 #{} 的区别  一个是预编译 一个是拼接 
-
-![image-20241229132639103](C:\Users\ZhuanZ\AppData\Roaming\Typora\typora-user-images\image-20241229132639103.png)
-
-————————————————————————————
-
-* 单参数
-
-![image-20241229134311300](C:\Users\ZhuanZ\AppData\Roaming\Typora\typora-user-images\image-20241229134311300.png)
-
-对象属性值，直接获取  例如下面的传参Emp e，在Empmapper.xml 中 直接用属性名 不要带e
-
-
-
-* 多参数 新版mybatis 支持 直接#{}  老版本 需要 @Param("对应") 参数
-
-![image-20241229134711785](C:\Users\ZhuanZ\AppData\Roaming\Typora\typora-user-images\image-20241229134711785.png)
 
 ——————————————————————————————————————————————————
 
@@ -44,9 +14,7 @@ ${} 和 #{} 的区别  一个是预编译 一个是拼接
 
 ——————————————————————————————————————————————————
 
-* resulttype 自定义结果封装类型  <id > 主键 < result  coloum =?  property =? >	 resultmap =？ 
-
-![image-20241229151843797](C:\Users\ZhuanZ\AppData\Roaming\Typora\typora-user-images\image-20241229151843797.png)
+* 
 
 
 
@@ -55,11 +23,10 @@ ${} 和 #{} 的区别  一个是预编译 一个是拼接
 ——————————————————————————————————————————————————
 
 * 一对一 关联查询    <association > 标签   （原本的bean 类中也要 要加一个customer 对应类 属性）	
+
 * ![image-20241229153819492](C:\Users\ZhuanZ\AppData\Roaming\Typora\typora-user-images\image-20241229153819492.png)
 
-* 对应查询的sql 语句 （复习 ！！！！）
-
-![image-20241229154045842](C:\Users\ZhuanZ\AppData\Roaming\Typora\typora-user-images\image-20241229154045842.png)
+  
 
 * 一对多 的情况   <collection  property     ofType    ~
 * ![image-20241229154928313](C:\Users\ZhuanZ\AppData\Roaming\Typora\typora-user-images\image-20241229154928313.png)
@@ -78,11 +45,7 @@ mybatis 分步查询 （就可以不使用连表查询 ）
 
 ——————————————————————————————————————————————————
 
-spring 中 启动网页  返回 json 信息  （还没讲解到）
 
-![image-20241229163457921](C:\Users\ZhuanZ\AppData\Roaming\Typora\typora-user-images\image-20241229163457921.png)
-
-——————————————————————————————————————————————————
 
 * 延迟 加载 
 
@@ -104,14 +67,7 @@ spring 中 启动网页  返回 json 信息  （还没讲解到）
 
 ——————————————————————————————————————————————————
 
-* 动态sql 
-* ![image-20241229191636443](C:\Users\ZhuanZ\AppData\Roaming\Typora\typora-user-images\image-20241229191636443.png)
-
-* 用where 容易 sql 错误 因为传参总想不到一些奇怪的 sql注入  
-
-
-
-![image-20241229192106391](C:\Users\ZhuanZ\AppData\Roaming\Typora\typora-user-images\image-20241229192106391.png)
+* 
 
 
 
@@ -146,35 +102,7 @@ spring 中 启动网页  返回 json 信息  （还没讲解到）
 
 
 
-——————————————————————————————————————————————
-
-* 开启事务 
-
-* 
-
-* ```
-  @EnableTransactionManagement
-  @SpringBootApplication
-  public class AlltestApplication {
-  
-      public static void main(String[] args) {
-         SpringApplication.run(AlltestApplication.class, args);
-      }
-  
-  }
-  ```
-
-* 上面 是开启事务 功能  后面在具体接口前面加上加上  @ Transactional 
-
-* 
-
-* ```
-  @Transactional
-  boolean update(Emp emp);
-  ```
-
-* 注： 分布式项目情况下 ，分布式事务 很多不支持 SQL批量操作 的回滚
-
+—————————————————————————————————————————————
 
 
 ——————————————————————————————————————————————————
@@ -185,8 +113,6 @@ spring 中 启动网页  返回 json 信息  （还没讲解到）
 
 
 
-![image-20241229202305432](C:\Users\ZhuanZ\AppData\Roaming\Typora\typora-user-images\image-20241229202305432.png)
-
 
 
 * 事务的缓存机制 
@@ -196,7 +122,7 @@ spring 中 启动网页  返回 json 信息  （还没讲解到）
 
 
 
-_——————————————————————————————————————————————————
+——————————————————————————————————————————————————
 
 * mybatis 插件  
 
